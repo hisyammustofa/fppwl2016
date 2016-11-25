@@ -11,12 +11,10 @@ Anggota Kelompok:
 - Nova Putra Utama (14.11.8147)
 
 *******************
-Release Information
+Informasi
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Final Project PWL 2016
 
 **************************
 Changelog and New Features
