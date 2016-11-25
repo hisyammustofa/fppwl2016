@@ -8,7 +8,7 @@ Anggota Kelompok:
 -	Ariska Dian Mursali (14.11.8126)
 -	Muhammad Yussi (14.11.8127)
 -	Hisyam Mustofa (14.11.8137)
--	Nova Putra Utama (14.11.8147)
+-	Nova Putra Utama (14.11.8146)
 
 *******************
 Informasi
