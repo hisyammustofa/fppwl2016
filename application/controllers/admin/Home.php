@@ -2,6 +2,10 @@
 
 class Home extends CI_Controller {
   public function index() {
+    
+  }
+
+  public function member() {
     $data = array(
             'title' => 'Dashboard Member',
             'isi' => 'admin/dashboard/index');

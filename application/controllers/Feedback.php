@@ -5,9 +5,9 @@ class Feedback extends CI_Controller {
     parent::__construct();
     require_once('twitteroauth/OAuth.php');
     require_once('twitteroauth/twitteroauth.php');
-    define('CONSUMER_KEY', 'ae3IDLdpuHxL5MK8E5LvVaGoD');
-    define('CONSUMER_SECRET', 'bJxZdJ16KWSshAZPvwWMh9ugYOJ5uL8bWniZpXR6i4s24uJ4xG');
-    define('OAUTH_CALLBACK', 'http://127.0.0.1/pwl/feedback/');
+    define('CONSUMER_KEY', 'wPFa71ejiPkaSZmF5jovbLY0b');
+    define('CONSUMER_SECRET', 'l1YboyKSQP649SlcrMkewpuIO2SBGpgfSLJR7cAc3rFe01rw85');
+    define('OAUTH_CALLBACK', 'http://127.0.0.1/fppwl2016/feedback/');
 
     $this->load->model('md_feedback');
   }

@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('Tidak bisa mengakses secara langsung');
 class Md_member extends CI_Model {
 	public function __construct() {
 		$this->load->database();
