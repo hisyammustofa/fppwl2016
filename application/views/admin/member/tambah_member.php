@@ -1,7 +1,7 @@
 <div class="panel panel-default">
-					<div class="panel-heading"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg><?php echo $form_title; ?></div>
+		<div class="panel-heading"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg><?php echo $form_title; ?></div>
 					<div class="panel-body">
-						<form class="form-horizontal" action="<?php echo base_url(); ?>admin/member/tambah" enctype="multipart/form-data" method="post">
+						<form class="form-horizontal" action="<?php echo base_url(); ?>admin/member/tambah" enctype="multipart/form-data" method="post" runat="server">
 							<fieldset>
 								<!-- Name input-->
 								<div class="form-group">
@@ -36,7 +36,14 @@
 								<div class="form-group">
 									<label class="col-md-3 control-label" for="foto">Upload Foto</label>
 									<div class="col-md-9">
-										<div id="my-dropzone" class="dropzone"></div>
+										<input type="file" id="imgInp" name="foto">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-3 control-label" for="foto">Preview</label>
+									<div class="col-md-9">
+										<img id="blah" class="img-circle" src="#" height="150" width="150" alt="your image" />
 									</div>
 								</div>
 
@@ -54,13 +61,10 @@
 								<!-- Form actions -->
 								<div class="form-group">
 									<div class="col-md-12 widget-right">
-										<button type="submit" id="submit" name="submit" class="btn btn-default btn-md pull-right">Submit</button>
+										<button type="submit" class="btn btn-default btn-md pull-right">Submit</button>
 									</div>
 								</div>
 							</fieldset>
 						</form>
-					</div>
 				</div>
-			</div>
-
-			
+</div>

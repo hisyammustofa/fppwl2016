@@ -33,7 +33,7 @@ class Md_member extends CI_Model {
 	}
 
 	public function delete_member($id) {
-		$this->db->where('member', $id);
+		$this->db->where('id_member', $id['id_member']);
 		return $this->db->delete('member');
 	}
 

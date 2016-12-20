@@ -36,9 +36,15 @@
 								<div class="form-group">
 									<label class="col-md-3 control-label" for="foto">Upload Foto</label>
 									<div class="col-md-9">
-										<input type="file" name="foto">
+										<input type="file" id="imgInp" name="foto">
 									</div>
-                  <img src="<?php echo base_url(); ?>uploads/<?php echo $detail['foto']; ?>" alt="" height="84" width="84">
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-3 control-label" for="foto">Preview</label>
+									<div class="col-md-9">
+										<img id="blah" class="img-circle" src="<?php echo base_url(); ?>uploads/<?php echo $detail['foto']; ?>" height="150" width="150" alt="your image" />
+									</div>
 								</div>
 
 								<div class="form-group">
@@ -46,12 +52,12 @@
 									<div class="col-md-9">
 									<select class="form-control" name="divisi">
 										<?php foreach ($divisi as $divi): ?>
-                      <?php if ($divi['id_divisi'] === $detail['id_divisi']):?>
+                     						 <?php if ($divi['id_divisi'] === $detail['id_divisi']):?>
 										    <option value="<?php echo $divi['id_divisi'];?>" selected="selected"><?php echo $divi['nama_divisi']; ?></option>
-                      <?php else: ?>
-                      <option value="<?php echo $divi['id_divisi'];?>"><?php echo $divi['nama_divisi']; ?></option>
-                      <?php endif; ?>
-                    <?php endforeach;  ?>
+                     						 <?php else: ?>
+                     					 <option value="<?php echo $divi['id_divisi'];?>"><?php echo $divi['nama_divisi']; ?></option>
+                     					 <?php endif; ?>
+                   					 <?php endforeach;  ?>
 									</select>
 									</div>
 								</div>
@@ -69,4 +75,3 @@
 						</form>
 					</div>
 				</div>
-			</div>

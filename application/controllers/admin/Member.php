@@ -84,7 +84,19 @@ class Member extends CI_Controller {
             'isi' => 'admin/member/edit_member');
         $this->load->view('admin/layout/wrapper', $data);
     } else {
-      $data = array(
+      if ( ! $this->upload->do_upload('foto')) {
+        $data = array(
+          'id_member' => $this->input->post('id_member'),
+          'nama' => $this->input->post('name'),
+          'alamat' => $this->input->post('alamat'),
+          'no_telp' => $this->input->post('telp'),
+          'email' => $this->input->post('email'),
+          'id_divisi' => $this->input->post('divisi')
+      );
+      $this->md_member->edit_member($data);
+      redirect(base_url().'admin/member/');
+      } else {
+         $data = array(
           'id_member' => $this->input->post('id_member'),
           'nama' => $this->input->post('name'),
           'alamat' => $this->input->post('alamat'),
@@ -95,8 +107,17 @@ class Member extends CI_Controller {
       );
       $this->md_member->edit_member($data);
       redirect(base_url().'admin/member/');
+      }
 
     }
+  }
+
+  public function delete($id) {
+    $data = array(
+          'id_member' => $id
+    );
+    $this->md_member->delete_member($data);
+    redirect(base_url().'admin/member/');
   }
 
 }

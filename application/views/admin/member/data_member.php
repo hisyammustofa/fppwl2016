@@ -18,12 +18,12 @@
 					<table data-toggle="table"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						<thead>
 							<tr>
-								<th data-field="nama" data-sortable="true">Nama</th>
+							<th data-field="nama" data-sortable="true">Nama</th>
 						    <th data-field="alamat" data-sortable="true">Alamat</th>
 						    <th data-field="no telepon"  data-sortable="true">No telepon</th>
 						    <th data-field="email" data-sortable="true">Email</th>
-								<th data-field="edit" data-sortable="true">Edit</th>
-								<th data-field="remove" data-sortable="true">Remove</th>
+							<th data-field="edit" data-sortable="true">Edit</th>
+							<th data-field="remove" data-sortable="true">Remove</th>
 						  </tr>
 						</thead>
 						<?php foreach ($member as $list): ?>
@@ -32,8 +32,8 @@
 							<td><?php echo $list['alamat']; ?></td>
 							<td><?php echo $list['no_telp']; ?></td>
 							<td><?php echo $list['email']; ?></td>
-							<td><a href="<?php echo base_url(); ?>admin/member/edit/<?php echo $list['id_member']; ?>">EDIT</a></td>
-							<td>Remove</td>
+							<td><a href="<?php echo base_url(); ?>admin/member/edit/<?php echo $list['id_member']; ?>"><img src="<?php echo base_url(); ?>assets/images/edit.png" alt="" height="32" width="32"></a></td>
+							<td><a href="<?php echo base_url(); ?>admin/member/delete/<?php echo $list['id_member']; ?>"><img src="<?php echo base_url(); ?>assets/images/remove.png" alt="" height="32" width="32"></a></td>
 						</tr>
 						<?php endforeach; ?>
 					</table>
@@ -41,5 +41,4 @@
 				</div>
 		</div>
 	</div>
-</div>
 </div>
