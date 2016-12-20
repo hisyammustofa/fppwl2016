@@ -3,7 +3,24 @@
 				<h2>Charts</h2>
 			</div>
 
-			<div class="col-md-12">
+			<div class="col-md-11">
+				<div class="form-group">
+					<form class="" action="<?php echo base_url(); ?>admin/charts/" method="post">
+						<label>Selects</label>
+						<select id="seleksi" name="nama_divisi" class="form-control" onchange='this.form.submit()'>
+							<?php foreach ($divisi as $divi):?>
+								<?php if($divi['id_divisi'] == $terselek): ?>
+							  <option value="<?php echo $divi['id_divisi']; ?>" selected><?php echo $divi['nama_divisi']; ?></option>
+							<?php else: ?>
+								<option value="<?php echo $divi['id_divisi']; ?>"><?php echo $divi['nama_divisi']; ?></option>
+							<?php endif; ?>
+							<?php endforeach; ?>
+						</select>
+					</form>
+				</div>
+			</div>
+
+			<div class="col-md-11">
 				<?php
 
 				include("lib/gcharts.php");
@@ -12,32 +29,21 @@
 
 				$gcharts->load(array('graphic_type' => 'LineChart'));
 
-				$gcharts->set_options(array(  'title' => 'Teste Without Dashboard',
+				$gcharts->set_options(array(  'title' => 'Opinion Analisis',
 													'vAxis' => array('title' => "Opinion Rangking",
 																	 'titleTextStyle' => array('color' => 'red')),
 													'hAxis' => array('title' => 'Bulan',
 																	 'titleTextStyle' => array('color' => 'red'))));
 
-				$arr = array('Bulan');
-				foreach ($divisi as $divi) {
-					array_push($arr, $divi['nama_divisi']);
+				$array = array(
+				array('Bulan', 'positif', 'negatif', 'netral'),
+				);
+
+				foreach ($opini as $val) {
+					array_push($array, array($val['bulan'], (int)$val['positif'], (int)$val['negatif'], (int)$val['netral']));
 				}
 
-				print_r($arr);
-
-				$array = array(
-				$arr,
-				array('Januari',1000,400, 0, 0),
-				array('Februari',1170,460, 0, 0),
-				array('Maret',660,1120, 0, 0),
-				array('April',0,540, 0, 0),
-				array('Mei',0,1325, 0, 0));
-
 				echo $gcharts->generate($array);
-
-				print_r($array);
-				echo "<br><br>";
-				print_r($divisi);
 
 				?>
 

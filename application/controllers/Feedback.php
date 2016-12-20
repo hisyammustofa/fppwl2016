@@ -120,14 +120,4 @@ class Feedback extends CI_Controller {
         }
     }
   }
-
-  public function get_feedback() {
-    $data = array(
-      'feedbacks' => $this->md_feedback->read_feedback(),
-      'isi' => "admin/testimoni/testimoni",
-      'divisi' => $this->md_feedback->select_divisi()
-    );
-    $this->load->view('admin/layout/wrapper', $data);
-  }
-
 }
