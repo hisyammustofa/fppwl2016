@@ -1,5 +1,6 @@
 
-<script src="<?php echo base_url(); ?>assets/js/jquery-1.11.1.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/dropzone.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery-1.11..min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/chart.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/chart-data.js"></script>
@@ -7,6 +8,44 @@
 <script src="<?php echo base_url(); ?>assets/js/easypiechart-data.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap-table.js"></script>
+
+<script>
+	Dropzone.autoDiscover = false;
+	var myDropzone = new Dropzone("#my-poto", {
+		url: "<?php echo site_url("admin/galeri/upload") ?>",
+		acceptedFiles: "image/*",
+		addRemoveLinks: true,
+		removedfile: function(file) {
+			var name = file.name;
+
+			$.ajax({
+				type: "post",
+				url: "<?php echo base_url("admin/galeri/remove") ?>",
+				data: { file: name },
+				dataType: 'html'
+			});
+			var previewElement;
+			return (previewElement = file.
+				previewElement) != null ? (
+				previewElement.parentNode.removeChild(
+				file.previewElement)) : (void 0);
+		},
+		init: function() {
+			var me = this;
+			$.get("<?php echo site_url('admin/galeri/list_files') ?>", function(data) {
+				  if (data.length > 0) {
+						$.each(data, function(key, value) {
+							var mockFile = value;
+							me.emit("addedfile", mockFile);
+							me.emit("thumbnail", mockFile, "<?php echo base_url(); ?>uploads/galeri/" + value.name);
+							me.emit("complete", mockFile);
+						});
+					}
+			});
+		}
+	});
+</script>
+
 <script>
  function readURL(input) {
 

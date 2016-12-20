@@ -12,11 +12,7 @@
 <link href="<?php echo base_url(); ?>assets/css/dropzone.css" rel="stylesheet">
 <!--Icons-->
 <script src="<?php echo base_url(); ?>assets/js/lumino.glyphs.js"></script>
- <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script type='text/javascript' src="<?php echo base_url(); ?>assets/js/flexcroll.js"></script>
-
-<div id='flexcroll-init'></div>
-</head>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

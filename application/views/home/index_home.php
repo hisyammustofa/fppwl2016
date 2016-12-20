@@ -187,7 +187,7 @@
 					<a href="#">~Presiden</a>
 					<ul class="list-unstyled list-inline">
 						<h4>Login untuk memberikan feedback</h4>
-						<li><a href="#"><img src="<?php echo base_url(); ?>assets/images/login-twitter.png" alt="" width="250"></a></li>
+						<li><a href="<?php echo base_url(); ?>feedback/">Log In</a> untuk memberikan komentar</li>
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
