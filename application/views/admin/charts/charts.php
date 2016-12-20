@@ -44,22 +44,21 @@
 				}
 
 				echo $gcharts->generate($array);
+				$gcharts->load(array('graphic_type' => 'BarChart'));
 
-				?>
-
-				<?php
-				$gcharts->load(array('graphic_type' => 'ColumnChart','dashboard_div' => TRUE, 'filter_div' => TRUE));
-
-
-				$gcharts->set_options(array(  'title' => 'Teste With Dashboard',
-													'vAxis' => array('title' => "Name",
+				$gcharts->set_options(array(  'title' => 'Opinion Analisis',
+													'vAxis' => array('title' => "Opinion Rangking",
 																	 'titleTextStyle' => array('color' => 'red')),
-													'hAxis' => array('title' => 'Donuts yang dimakan',
+													'hAxis' => array('title' => 'Bulan',
 																	 'titleTextStyle' => array('color' => 'red'))));
 
-				$gcharts->set_control_options(array('filterColumnLabel' => 'Donuts yang dimakan'));
+				$array = array(
+				array('Bulan', 'positif', 'negatif', 'netral'),
+				);
 
-				$array = array(array('Name','Donuts yang dimakan'),array('Michael',5),array('Elisa',7),array('Robert',3), array('John',2),array('Jessica',6),array('Aaron',1),array('Margareth',8));
+				foreach ($opini as $val) {
+					array_push($array, array($val['bulan'], (int)$val['positif'], (int)$val['negatif'], (int)$val['netral']));
+				}
 
 				echo $gcharts->generate($array);
 

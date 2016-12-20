@@ -47,16 +47,16 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li class="active"><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Statistik</a></li>
-			<li ><a href="widgets.html"><svg class="glyph stroked two messages"><use xlink:href="#stroked-two-messages"></use></svg> Testimoni</a></li>
+			<li><a href="<?php echo base_url(); ?>admin/dashboard/"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li><a href="<?php echo base_url(); ?>admin/charts/"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Statistik</a></li>
+			<li ><a href="<?php echo base_url(); ?>admin/feedback/"><svg class="glyph stroked two messages"><use xlink:href="#stroked-two-messages"></use></svg> Testimoni</a></li>
 			<li class="parent">
 				<a href="#">
 					<span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Olah Data
 				</a>
 				<ul class="children collapse" id="sub-item-1">
 					<li>
-						<a class="" href="#">
+						<a class="" href="<?php echo base_url(); ?>admin/member/">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Data Member
 						</a>
 					</li>
@@ -66,8 +66,13 @@
 						</a>
 					</li>
 					<li>
-						<a class="" href="#">
+						<a class="" href="<?php echo base_url(); ?>admin/galeri/">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Data Galeri
+						</a>
+					</li>
+					<li>
+						<a class="" href="#">
+							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Data Servis
 						</a>
 					</li>
 				</ul>

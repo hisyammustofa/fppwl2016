@@ -9,7 +9,7 @@ class Home extends CI_Controller {
     $this->form_validation->set_rules('username', 'Username', 'required|trim|callback_validate_credentials');
     $this->form_validation->set_rules('password', 'Password', 'required|trim');
     if ($this->form_validation->run()) {
-      redirect(base_url().'admin/member/');
+      redirect(base_url().'admin/dashboard/');
     } else {
       redirect(base_url().'admin/home/');
     }
